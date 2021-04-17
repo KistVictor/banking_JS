@@ -1,7 +1,8 @@
 import { Cliente } from "./Cliente.js"
 
 export class ContaCorrente{
-    agencia
+    static numeroContas = 0
+    agencia 
     _cliente
 
     set cliente(novoValor){                     //Proteção do _cliente. Só pode receber instância do Cliente
@@ -17,6 +18,12 @@ export class ContaCorrente{
 
     get saldo(){
         return this._saldo
+    }
+
+    constructor(cliente, agencia){
+        this.agencia = agencia
+        this.cliente = cliente
+        ContaCorrente.numeroContas += 1
     }
 
     sacar(valor){
@@ -35,7 +42,5 @@ export class ContaCorrente{
         const valorSacado = this.sacar(valor)
         conta.depositar(valorSacado)
     }
-
-
 
 }
