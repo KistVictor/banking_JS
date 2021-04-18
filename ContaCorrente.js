@@ -6,4 +6,10 @@ export class ContaCorrente extends Conta{
         super(0, cliente, agencia)
         ContaCorrente.numeroContas += 1
     }
+
+    //Sobreescrevendo o comportamento de sacar na Conta.js
+    sacar(valor){
+        const taxa = 1.1
+        return this._sacar(valor, taxa)
+    }
 }
