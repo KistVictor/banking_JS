@@ -14,4 +14,4 @@ const clienteEstaLogado = SistemaAutenticacao.login(cliente, "123")
 
 console.log(clienteEstaLogado)
 console.log(cliente)
-console.log(diretor)
+console.log(diretor) 
